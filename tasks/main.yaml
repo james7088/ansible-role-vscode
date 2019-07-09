@@ -1,0 +1,9 @@
+---
+- include: debug.yaml
+
+- include: apt-ubuntu.yaml
+  when: ansible_distribution in ['Ubuntu', 'Linux Mint']
+
+- include: yum-rhel.yaml
+  when: ansible_distribution in ['RedHat', 'CentOS']
+
